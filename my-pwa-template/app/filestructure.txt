@@ -1,0 +1,23 @@
+/pwa-template
+├── /app
+│   ├── globals.css          # Tailwind Setup
+│   ├── layout.tsx           # THE SHELL (Persistent Header, Slide-over, Footer Ad)
+│   ├── page.tsx             # LANDING (Image 2: Hero + Grid)
+│   ├── [category]           # SUB-PAGES (Image 1: Nav + Feed)
+│   │   └── page.tsx         # The template for ALL sub-pages
+│   └── manifest.ts          # PWA Configuration
+├── /components
+│   ├── /layout
+│   │   ├── Header.tsx       # Logo (Left) + Hamburger (Right)
+│   │   ├── SlideMenu.tsx    # The 1/3 screen drawer
+│   │   └── StickyAd.tsx     # The fixed bottom ad unit
+│   ├── /blocks
+│   │   ├── InstallBanner.tsx # Smart Conditional Logic (iOS/Android)
+│   │   ├── HeroBlock.tsx    # "Get Informed" (Home) or Title (Sub)
+│   │   ├── TopicGrid.tsx    # The Square Grid (Home)
+│   │   ├── Breadcrumb.tsx   # The "Back to Home > Category" nav
+│   │   └── FeedList.tsx     # The vertical card stack
+├── /data
+│   ├── site-config.json     # Site Title, Logo URL, AdSense ID
+│   └── menu-links.json      # Hamburger menu items
+└── /public                  # Images and Icons
