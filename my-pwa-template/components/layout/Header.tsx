@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X, MapPin } from "lucide-react"; 
 import siteConfig from "@/data/site-config.json"; 
 
 export default function Header() {
@@ -13,13 +13,24 @@ export default function Header() {
       {/* 1. VISIBLE HEADER */}
       <header className="fixed top-0 left-0 w-full h-16 bg-black/95 backdrop-blur-md z-40 flex items-center justify-between px-4 border-b border-gray-800">
         
-        <Link href="/" className="flex items-center gap-2">
-           <div className="w-8 h-8 bg-red-600 flex items-center justify-center font-bold rounded text-white">
-             {siteConfig.logoLetter}
+        <Link href="/" className="flex items-center gap-1.5">
+           {/* Red SVG Pin Icon */}
+           <MapPin 
+             className="text-brand fill-brand/20" 
+             size={24} 
+             strokeWidth={2.5}
+           />
+           
+           {/* Text Container */}
+           <div className="flex items-baseline gap-1.5 font-bold text-lg tracking-wide uppercase">
+             {/* Static Template Text */}
+             <span className="text-neutral-400">No BS</span>
+             
+             {/* Dynamic Site Title (from JSON) */}
+             <span className="text-gray-100">
+               {siteConfig.siteName}
+             </span>
            </div>
-           <span className="font-bold text-lg tracking-wide uppercase text-gray-100">
-             {siteConfig.siteName}
-           </span>
         </Link>
 
         <button 
@@ -46,7 +57,7 @@ export default function Header() {
         </div>
         <nav className="flex flex-col p-6 gap-6 text-xl font-medium">
            <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-           {/* Dynamic links will go here later */}
+           {/* Dynamic links */}
            <Link href="/news" onClick={() => setIsMenuOpen(false)}>News</Link>
            <Link href="/tech" onClick={() => setIsMenuOpen(false)}>Technology</Link>
         </nav>
