@@ -11,6 +11,7 @@ export default function HeroBlock({ headline, subheadline }: HeroProps) {
       </h1>
       <p className="text-gray-400 text-lg md:text-xl font-light">
         {subheadline}
+      <div className="w-16 h-1 bg-red-600 mx-auto mb-4"></div>
       </p>
     </section>
   );
