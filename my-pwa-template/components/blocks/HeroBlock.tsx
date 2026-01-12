@@ -5,7 +5,7 @@ interface HeroProps {
 
 export default function HeroBlock({ headline, subheadline }: HeroProps) {
   return (
-    <section className="text-center py-5 px-6 border-b border-gray-800">
+    <section className="text-center py-2 px-6 border-b border-gray-800">
       
       {/* 1. HEADLINE */}
       {/* Reduced mb-2 to mb-1 to pull the text below it closer */}
