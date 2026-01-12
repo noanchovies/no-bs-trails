@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-// I've imported a few options so you can easily swap them out below
-import { Menu, X, Waypoints, Waypoints, Compass } from "lucide-react"; 
+import { Menu, X, MapPin, Waypoints, Compass } from "lucide-react"; 
 import siteConfig from "@/data/site-config.json"; 
 
 export default function Header() {
@@ -11,29 +10,24 @@ export default function Header() {
 
   return (
     <>
-      {/* 1. VISIBLE HEADER */}
       <header className="fixed top-0 left-0 w-full h-16 bg-black/95 backdrop-blur-md z-40 flex items-center justify-between px-4 border-b border-gray-800">
         
         <Link href="/" className="flex items-center gap-2 group">
            
-           {/* --- ICON OPTION --- 
-               Change <Waypoints /> to <Waypoints /> or <Compass /> to test different looks.
-               'fill-current' makes the pin look solid/filled like your reference.
+           {/* --- ICON: WAYPOINTS --- 
+               This is the connected dots icon. 
+               I removed the 'fill' because this icon is line-based and looks better as a clean stroke.
            */}
            <div className="text-brand transition-transform group-hover:scale-110">
              <Waypoints 
-               size={24} 
-               strokeWidth={2}
-               className="fill-brand/20" // Adds a subtle tint inside the icon
+               size={28}  // Increased slightly from 24 because this icon is wider/shorter
+               strokeWidth={2.5}
              />
            </div>
            
            {/* --- TEXT LOCKUP --- */}
            <div className="flex items-baseline gap-1.5 font-bold text-lg tracking-wide uppercase">
-             {/* Static Text: Changed from Grey to White for readability on dark mode */}
              <span className="text-white">No BS</span>
-             
-             {/* Dynamic Title: Uses the Brand Red to pop */}
              <span className="text-brand">
                {siteConfig.siteName}
              </span>
@@ -48,7 +42,7 @@ export default function Header() {
         </button>
       </header>
 
-      {/* 2. SLIDE-OVER DRAWER (Unchanged logic) */}
+      {/* DRAWER (unchanged) */}
       {isMenuOpen && (
         <div 
           className="fixed inset-0 bg-black/60 z-50"
