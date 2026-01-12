@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 // I've imported a few options so you can easily swap them out below
-import { Menu, X, MapPin, Waypoints, Compass } from "lucide-react"; 
+import { Menu, X, Waypoints, Waypoints, Compass } from "lucide-react"; 
 import siteConfig from "@/data/site-config.json"; 
 
 export default function Header() {
@@ -17,11 +17,11 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 group">
            
            {/* --- ICON OPTION --- 
-               Change <MapPin /> to <Waypoints /> or <Compass /> to test different looks.
+               Change <Waypoints /> to <Waypoints /> or <Compass /> to test different looks.
                'fill-current' makes the pin look solid/filled like your reference.
            */}
            <div className="text-brand transition-transform group-hover:scale-110">
-             <MapPin 
+             <Waypoints 
                size={24} 
                strokeWidth={2}
                className="fill-brand/20" // Adds a subtle tint inside the icon
