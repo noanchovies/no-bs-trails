@@ -57,7 +57,7 @@ export default function InstallBanner() {
           <Download size={20} />
         </div>
         <span className="font-medium">
-          {isIOS ? "Install this app for the best experience" : "Get the App for a better experience"}
+          {isIOS ? "Install app to use Offline" : "Get the App to Use Offline"}
         </span>
       </div>
 
